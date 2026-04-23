@@ -35,7 +35,7 @@ const TaskManager = () => {
   const fetchTasks = async () => {
     try {
       setLoading(true);
-      const res = await fetch("http://localhost:5000/api/tasks", {
+      const res = await fetch("https://task-manager-luminary.onrender.com/api/tasks", {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await res.json();
@@ -52,7 +52,7 @@ const TaskManager = () => {
     e.preventDefault();
     if (!newTask.title.trim()) return;
     try {
-      const res = await fetch("http://localhost:5000/api/tasks", {
+      const res = await fetch("https://task-manager-luminary.onrender.com/api/tasks", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -72,7 +72,7 @@ const TaskManager = () => {
 
   const handleToggleComplete = async (task) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/tasks/${task._id}`, {
+      const res = await fetch(`https://task-manager-luminary.onrender.com/api/tasks/${task._id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -91,7 +91,7 @@ const TaskManager = () => {
 
   const handleDelete = async (id) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/tasks/${id}`, {
+      const res = await fetch(`https://task-manager-luminary.onrender.com/api/tasks/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` }
       });
@@ -106,7 +106,7 @@ const TaskManager = () => {
 
   const handleUpdate = async (id, updates) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/tasks/${id}`, {
+      const res = await fetch(`https://task-manager-luminary.onrender.com/api/tasks/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
